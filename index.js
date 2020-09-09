@@ -121,7 +121,7 @@ exports.build = function build(argv, callback) {
         pack = true;
         break;
       case 'O':
-        onto = option.optarg;
+        onto = option.optarg.replace(/'|"|;|&|,|\\|\|/gi, '');
         break;
       case 'c':
         commit = true;
